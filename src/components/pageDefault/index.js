@@ -7,10 +7,9 @@ import Cards from '../cards'
 export default function PageDefault (){
     return(
         <div>
-            <GlobalStyle>
-                <Banner />
-                <Cards />
-            </GlobalStyle>
+            <Banner />
+            <Cards />
+            <GlobalStyle/>
         </div>
         
     )

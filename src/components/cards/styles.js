@@ -75,11 +75,11 @@ export const Products = styled.div`
         background: #ffebeb;
     }
     @media screen and (max-width: 1016px) {
-        {
+        
             flex-direction: column;
             width: 300px;
             height: 302px;
-        }
+        
         img{
             margin-bottom: -32px;
             margin-left: 0;
@@ -87,50 +87,49 @@ export const Products = styled.div`
             height: 150px;
         }
         p{
-           width: 100%;
+           width: 220px;
            margin-bottom: -8px;
            margin-top: 30px;
-           margin-left: -20px;
+           margin-left: 20px;
         }
         button{
             margin-left: 85px;
         }
     }
-    @media screen and (max-width: 746px){
-        flex-direction: row;
-        width: 450px;
-        height: 250px;
 
+    @media screen and (max-width: 766px){
+            flex-direction: row;
+            justify-content: center;
+        
+            width: 650px;
+            height: 250px;
         img{
             width: 140px;
             height: 200px;
-            margin-bottom: 10px;
-            margin-left: 40px;
+            margin-left: 15px;
+            margin-bottom: 8px;
+        }
+        p{
+            flex-wrap: wrap;
+            width: 300px;
+            text-align: center;
+
+        }
+        button{
+            margin-right: -70px;
+            
         }
     }
 
-    @media screen and (max-width: 746px){
-        {
-            flex-direction: column;
-            width: 390px;
-            height: 302px;
-        }
+    @media screen and (max-width: 668px){
+        width: 500px;
+    }
+    @media screen and (max-width: 517px){
+        width: 450px;
         img{
-            margin-bottom: -32px;
-            margin-right: 50px;
             width: 100px;
-            height: 150px;
-        }
-        p{
-            display: flex;
-            justify-content: center;
-            
-            width: 100px:
-            height: 200px;
-            margin-top: 30px;
-        }
-        button{
-            margin: 0px 120px 0px;
+            height: 160px;
+            margin-left: 25px;
         }
     }
 `;

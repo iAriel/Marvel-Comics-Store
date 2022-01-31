@@ -10,26 +10,31 @@ justify-content: space-between;
 position: relative;
 
 margin-bottom: 64px;
-background-color:#cc0000;
+background-color: #cc0000;
 
 
 
 img{
-    scale: 115%;
+    width: 650px;
+    height: 500px;
+    object-fit: cover;
+    position: absolute;
     margin-right: 160px;
     filter: drop-shadow(11px -1px 20px #660000);
-    right: 0;
-    top: 4;
+    right: 0%;
+    top: 7%;
+
 }
-@media screen and (max-width: 1250px){
+@media (max-width: 1250px){
     img{
         position: absolute;
-        scale: 50%;
-        bottom: -40%;
-        left: 15%;
+        width: 650px;
+        height: 500px;
+        margin-bottom: -50px;
+        object-fit: cover;
     }
 }
-@media screen and (max-width: 887px){
+@media (max-width: 892px){
     img{
         display: none;
     }
@@ -45,16 +50,20 @@ export const TextTitle = styled.div`
     margin-left: 240px;
     padding: 20px;
     font-size: 32px;
+    
 span{
     font-size: 30px;
     font-weight:400;
     text-decoration: underline;
+    
+    z-index: 1;
 }
-@media screen and (max-width: 887px){
+
+@media (max-width: 887px){
     justify-content: center;
     margin: auto;
 }
-@media screen and (max-width: 562px){
+@media (max-width: 562px){
     font-size: 25px;
     span{
         font-size: 23px;

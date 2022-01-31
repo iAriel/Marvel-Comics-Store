@@ -1,4 +1,3 @@
-import './App.css';
 import PageDefault from './components/pageDefault';
 
 function App() {
