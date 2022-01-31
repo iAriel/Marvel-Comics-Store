@@ -1,13 +1,11 @@
 import { React, useEffect, useState } from 'react';
 
-import {TitleContent, Card, Products} from './styles'
+import { TitleContent, Card, Products } from './styles';
 
 import axios from 'axios';
 import md5 from 'md5';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-
-import './index.css'
 
 export default function Cards() {
     const privateKey = 'b9136e2436aa981138e7bebc2c7e63322b7b032f';
@@ -18,6 +16,13 @@ export default function Cards() {
 
     const [comics, setComics] = useState([])
     const [comicDetails, setComicDetails] = useState({})
+    const [currentPage, setCurrentPage] = useState(0);
+    const [postsPerPage] = useState(9);
+
+    const pages = Math.ceil(comics.length / postsPerPage);
+    const startIndex = currentPage * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+    const currentPosts = comics.slice(startIndex, endIndex);
 
     useEffect(() => {
         Aos.init({
@@ -37,14 +42,16 @@ export default function Cards() {
         })
     }, [])
 
+
     function setInfoModal(comic) {
         setComicDetails(comic)
     }
+
     return (
         <div>
             <TitleContent>OUR COMICS</TitleContent>
             <Card>
-                {comics.map((comic, index) => (
+                {currentPosts.map((comic, index) => (
                     <div key={index} >
                         <Products data-aos="zoom-in">
                             <img
@@ -60,7 +67,12 @@ export default function Cards() {
                     </div>
                 ))}
             </Card>
-            )
+            <div>
+                    
+            {Array.from(Array(pages), (item, index) =>{
+                return <button key={index} value={index} onClick={(e) => setCurrentPage(Number(e.target.value))} >{index + 1}</button>
+            })}
+            </div>
         </div>
 
     )
