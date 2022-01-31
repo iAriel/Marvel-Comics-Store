@@ -1,5 +1,7 @@
 import { React, useEffect, useState } from 'react';
 
+import {TitleContent, Card, Products} from './styles'
+
 import axios from 'axios';
 import md5 from 'md5';
 import Aos from 'aos'
@@ -40,22 +42,24 @@ export default function Cards() {
     }
     return (
         <div>
-            <h1 className="titleContent">OUR COMICS</h1>
-            <div className="cards" >
+            <TitleContent>OUR COMICS</TitleContent>
+            <Card>
                 {comics.map((comic, index) => (
                     <div key={index} >
-                        <div data-aos="zoom-in" className="products">
+                        <Products data-aos="zoom-in">
                             <img
                                 key={comic.id}
                                 src={comic.thumbnail.path + "/portrait_xlarge.jpg"}
                                 alt={comic.title}
                             />
-                            <p>{comic.title}</p>
-                            <button className="buy">Comprar</button>
-                        </div>
+                            <div>
+                                <p>{comic.title}</p>
+                                <button className="buy">Comprar</button>
+                            </div>
+                        </Products>
                     </div>
                 ))}
-            </div>
+            </Card>
             )
         </div>
 
