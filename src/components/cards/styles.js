@@ -33,6 +33,18 @@ export const Products = styled.div`
 
     font: 400 32px 'Roboto', Arial;
 
+    span{
+        position: absolute;
+        font-size: 15px;
+        color: #f13e2a;
+        top: 0;
+        background-color: #fde910;
+        padding: 0px 3px 3px 3px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        box-shadow: 4px 13px 15px -5px rgba(0,0,0,0.16);
+    }
+
     img{
         width: 140px;
         height: 200px;
@@ -116,7 +128,6 @@ export const Products = styled.div`
 
         }
         button{
-            margin-right: -70px;
             
         }
     }

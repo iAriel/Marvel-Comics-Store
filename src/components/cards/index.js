@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 
-import { TitleContent, Card, Products } from './styles';
+import { TitleContent, Card, Products, Rare} from './styles';
+import Pagination from '../pagination';
 
 import axios from 'axios';
 import md5 from 'md5';
@@ -53,7 +54,11 @@ export default function Cards() {
             <Card>
                 {currentPosts.map((comic, index) => (
                     <div key={index} >
+                        
                         <Products data-aos="zoom-in">
+                        <span>
+                            Rare
+                        </span>
                             <img
                                 key={comic.id}
                                 src={comic.thumbnail.path + "/portrait_xlarge.jpg"}
@@ -61,18 +66,13 @@ export default function Cards() {
                             />
                             <div>
                                 <p>{comic.title}</p>
-                                <button className="buy">Comprar</button>
+                                <button className="buy">Buy</button> 
                             </div>
                         </Products>
                     </div>
                 ))}
             </Card>
-            <div>
-                    
-            {Array.from(Array(pages), (item, index) =>{
-                return <button key={index} value={index} onClick={(e) => setCurrentPage(Number(e.target.value))} >{index + 1}</button>
-            })}
-            </div>
+            <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
 
     )

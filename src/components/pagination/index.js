@@ -1,19 +1,14 @@
 import React from 'react'
 
-import {Pages} from './styles'
+import {Pages, Button} from './styles'
 
-export default function Pagination({postPerPage, totalPost, paginate}){
-    const pageNumbers = [];
-    const pages = Math.ceil(totalPost / postPerPage)
-    pageNumbers.push(pages)
-
+export default function Pagination({pages, setCurrentPage, currentPage}){
+    
     return(
-        <div>
-            <Pages>
-                {Array.from(Array(pages), (item, index) => {
-                    return <button>{index}</button>
-                })}
-            </Pages>
-        </div>
+        <Pages>
+            {Array.from(Array(pages), (item, index) =>{
+                return <Button currentPage={currentPage} key={index} value={index} onClick={(e) => setCurrentPage(Number(e.target.value))} >{index + 1}</Button>
+            })}
+        </Pages>
     )
 }
