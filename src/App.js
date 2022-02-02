@@ -1,10 +1,11 @@
 import PageDefault from './components/pageDefault';
 
 function App() {
+  
   return (
-    <div className="App">
-        <PageDefault />
-    </div>
+        <div className="App">
+          <PageDefault />
+      </div>
   );
 }
 

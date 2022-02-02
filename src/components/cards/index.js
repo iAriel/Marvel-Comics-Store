@@ -1,7 +1,8 @@
 import { React, useEffect, useState } from 'react';
 
-import { TitleContent, Card, Products, Rare} from './styles';
+import { TitleContent, Card, Products,ButtonModal } from './styles';
 import Pagination from '../pagination';
+import Modal from '../modal'
 
 import axios from 'axios';
 import md5 from 'md5';
@@ -19,11 +20,17 @@ export default function Cards() {
     const [comicDetails, setComicDetails] = useState({})
     const [currentPage, setCurrentPage] = useState(0);
     const [postsPerPage] = useState(9);
+    const [showModal, setShowModal] = useState(false);
 
     const pages = Math.ceil(comics.length / postsPerPage);
     const startIndex = currentPage * postsPerPage;
     const endIndex = startIndex + postsPerPage;
     const currentPosts = comics.slice(startIndex, endIndex);
+    // const porcent = comics.length/10;
+
+    const openModal = () => {
+        setShowModal(prev => !prev)
+    }
 
     useEffect(() => {
         Aos.init({
@@ -43,36 +50,40 @@ export default function Cards() {
         })
     }, [])
 
-
     function setInfoModal(comic) {
         setComicDetails(comic)
+        openModal();
     }
+
 
     return (
         <div>
+            
+            
+            
             <TitleContent>OUR COMICS</TitleContent>
             <Card>
                 {currentPosts.map((comic, index) => (
                     <div key={index} >
-                        
-                        <Products data-aos="zoom-in">
-                        <span>
-                            Rare
-                        </span>
-                            <img
-                                key={comic.id}
-                                src={comic.thumbnail.path + "/portrait_xlarge.jpg"}
-                                alt={comic.title}
-                            />
-                            <div>
-                                <p>{comic.title}</p>
-                                <button className="buy">Buy</button> 
-                            </div>
-                        </Products>
+                        <ButtonModal data-aos="zoom-in" onClick={() => setInfoModal(comic)}>
+                            <span>Rare</span>
+                                
+                                    <img
+                                        key={comic.id}
+                                        src={comic.thumbnail.path + "/portrait_xlarge.jpg"}
+                                        alt={comic.title}
+                                    />
+                                <div>
+                                    <p>{comic.title}</p>
+                                    <p>$: {comic.prices[0].price}</p>
+                                    {/* <button className="buy">Buy</button>  */}
+                                </div>
+                        </ButtonModal>
                     </div>
                 ))}
             </Card>
-            <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <Modal showModal={showModal} setShowModal={setShowModal}comicDetails={comicDetails}/>
+            <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
         </div>
 
     )

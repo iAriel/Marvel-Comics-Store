@@ -18,30 +18,34 @@ export const Card = styled.div`
     width: 80%;
     justify-content: center;
     gap: 48px 12.8px;
+    z-index: -10;
 `;
 
-export const Products = styled.div`
+export const ButtonModal = styled.button`
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background: #f13e2a;
     border-radius: 5px;
+    border: none;
   
     width: 400px;
     height: 250px;
 
     font: 400 32px 'Roboto', Arial;
-
+    
     span{
         position: absolute;
         font-size: 15px;
+        text-align: center;
         color: #f13e2a;
         top: 0;
+        right: 0;
         background-color: #fde910;
-        padding: 0px 3px 3px 3px;
-        border-bottom-right-radius: 5px;
+        padding: 0px 25px 3px 25px;
         border-bottom-left-radius: 5px;
+        border-top-right-radius: 4px;
         box-shadow: 4px 13px 15px -5px rgba(0,0,0,0.16);
     }
 
@@ -72,7 +76,8 @@ export const Products = styled.div`
         padding: 16px;
     }
 
-    button{
+    div{
+        button{
         background: white;
         padding: 7px 40px 7px 40px;
         border:none;
@@ -81,11 +86,13 @@ export const Products = styled.div`
         transform: skewX(-30deg);
         transition: all .35s
     }
-    button:hover{
-        cursor: pointer;
-        color: #001514;
-        background: #ffebeb;
+        button:hover{
+            cursor: pointer;
+            color: #001514;
+            background: #ffebeb;
+        }
     }
+    
     @media screen and (max-width: 1016px) {
         
             flex-direction: column;
@@ -104,9 +111,12 @@ export const Products = styled.div`
            margin-top: 30px;
            margin-left: 20px;
         }
-        button{
-            margin-left: 85px;
+        div{
+            button{
+                margin-left: 85px;
+            }
         }
+        
     }
 
     @media screen and (max-width: 766px){
@@ -126,9 +136,6 @@ export const Products = styled.div`
             width: 300px;
             text-align: center;
 
-        }
-        button{
-            
         }
     }
 
