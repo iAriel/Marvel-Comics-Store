@@ -1,23 +1,18 @@
-import React, {useState} from 'react'
-import {CartContextProvider} from '../../context/cartContext';
+import React from 'react'
+import{CartContextProvider} from '../../context/cartContext'
 
 import {GlobalStyle} from './styles'
-import Banner from '../banner'
-import Cards from '../cards'
-import Cart from '../cart'
+import Home from '../../pages/home'
+import Cart from '../../pages/cart'
+
 
 export default function PageDefault (){
-    
     return(
         <div>
             <CartContextProvider>
-                <Cart />
-                <Banner />
-                <Cards />
+                <Home />
                 <GlobalStyle/>
             </CartContextProvider>
-            
         </div>
-        
     )
 }

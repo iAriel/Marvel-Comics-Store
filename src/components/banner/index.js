@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import Typed from 'typed.js';
 
 import {Title, TextTitle} from './styles';
+import CartButton from '../cartButton';
 import SpiderMan from '../../assets/images/spiderman.png';
 
 export default function Banner(){
@@ -16,6 +17,7 @@ export default function Banner(){
     }, [])
     return(
         <div>
+            <CartButton/>
             <Title>
                 <TextTitle> 
                     <h1>Marvel Comics</h1>

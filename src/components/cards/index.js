@@ -2,12 +2,12 @@ import { React, useEffect, useState } from 'react';
 
 import { TitleContent, Card, Products,ButtonModal } from './styles';
 import Pagination from '../pagination';
-import Modal from '../modal'
+import Modal from '../modal';
 
 import axios from 'axios';
 import md5 from 'md5';
 import Aos from 'aos'
-import 'aos/dist/aos.css'
+import 'aos/dist/aos.css';
 
 export default function Cards() {
     const privateKey = 'b9136e2436aa981138e7bebc2c7e63322b7b032f';
@@ -26,10 +26,9 @@ export default function Cards() {
     const startIndex = currentPage * postsPerPage;
     const endIndex = startIndex + postsPerPage;
     const currentPosts = comics.slice(startIndex, endIndex);
-    // const porcent = comics.length/10;
 
     const openModal = () => {
-        setShowModal(prev => !prev)
+        setShowModal(prev => !prev);
     }
 
     useEffect(() => {
@@ -76,7 +75,6 @@ export default function Cards() {
                                 <div>
                                     <p>{comic.title}</p>
                                     <p>$: {comic.prices[0].price}</p>
-                                    {/* <button className="buy">Buy</button>  */}
                                 </div>
                         </ButtonModal>
                     </div>

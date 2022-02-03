@@ -9,8 +9,7 @@ export const NavBar = styled.div`
     font: 400 10px 'Roboto', Arial;
 
     p{
-        position: fixed;
-        top: 2.5%;
+        position: absolute;
         right: 3%;
 
         background: #fbf5f2;

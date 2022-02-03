@@ -133,7 +133,6 @@ export const ButtonModal = styled.button`
         }
         p{
             flex-wrap: wrap;
-            width: 300px;
             text-align: center;
 
         }
