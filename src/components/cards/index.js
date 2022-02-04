@@ -41,7 +41,7 @@ export default function Cards() {
     }, [])
 
     useEffect(() => {
-        axios(`http://gateway.marvel.com/v1/public/comics?ts=${time}&apikey=${publicKey}&hash=${hash}`).then((response) => {
+        axios(`https://gateway.marvel.com/v1/public/comics?ts=${time}&apikey=${publicKey}&hash=${hash}`).then((response) => {
             setComics(response.data.data.results)
 
         }).catch(err => {
