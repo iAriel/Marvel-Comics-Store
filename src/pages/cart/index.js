@@ -30,7 +30,7 @@ export default function Cart() {
     return (
         <Container>
             <NavBar>
-                <button onClick={() => handleState()}>Back</button>
+                <button onClick={() => handleState()}>Voltar</button>
                 <span>MARVEL COMICS</span>
             </NavBar>
             <CardContainer>
