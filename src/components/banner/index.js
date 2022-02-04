@@ -10,7 +10,7 @@ export default function Banner(){
 
     useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: ["The best comics you find here."],
+            strings: ["Os melhores quadrinhos para você."],
             startDelay: 300,
             typeSpeed: 100,
         });

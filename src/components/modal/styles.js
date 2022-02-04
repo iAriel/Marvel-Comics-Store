@@ -21,6 +21,22 @@ export const ModalWrapper = styled.div`
   display: flex;
   position: absolute;
   border-radius: 10px;
+
+  @media screen and (max-width: 896px){
+    width: 600px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: 649px){
+    width: 400px;
+    height: 600px;
+
+    flex-direction: column;
+  }
+  @media screen and (max-width: 424px){
+    width: 370px;
+    height: 570px;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -34,6 +50,8 @@ export const CloseButton = styled.button`
   :hover{
     cursor: pointer;
   }
+
+  
 `;
 
 export const ModalImg = styled.img`
@@ -41,6 +59,18 @@ export const ModalImg = styled.img`
   height: 500px;
   border-radius: 10px 0 0 10px;
   background: #000;
+
+  @media screen and (max-width: 896px){
+    width: 234px;
+    height: 400px;
+  }
+  @media screen and (max-width: 649px){
+    width: 130px;
+    height: 200px;
+
+    margin: 10px auto;
+    border-radius: 0;
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -57,6 +87,30 @@ export const ModalContent = styled.div`
   p {
     margin-bottom: 1rem;
   }
+  @media screen and (max-width: 896px){
+    h1{
+      font-size: 20px;
+      }
+    div{
+      overflow-y: scroll;
+      height: 200px;
+      margin-bottom: 20px;
+      p{
+      margin-right: 50px;
+      font-size: 15px;
+      }
+    }
+  }
+  @media screen and (max-width: 649px){
+    h1{
+      font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 424px){
+    div{
+      height: 150px;
+    }
+  }
 `;
 
 export const BuyButton = styled.button`
@@ -69,5 +123,10 @@ export const BuyButton = styled.button`
 
   :hover{
     cursor: pointer;
+  }
+  @media screen and (max-width: 896px){
+    padding: 10px 40px 10px 40px;
+    
+    margin-right: 50px;
   }
 `;

@@ -3,7 +3,6 @@ import{CartContextProvider} from '../../context/cartContext'
 
 import {GlobalStyle} from './styles'
 import Home from '../../pages/home'
-import Cart from '../../pages/cart'
 
 
 export default function PageDefault (){

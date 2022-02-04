@@ -68,32 +68,102 @@ export const CardCart = styled.div`
     margin-bottom: 25px;
 
     font: 400 32px 'Roboto', Arial;
-    
-    span{
-        margin: auto;
-        font-size: 16px;
-        font-weight: 500;
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        direction: ltr;
-        color: white;
-        text-align: center;
+
+    div{
+        display: flex;
+        justify-content:space-between;
+        span{
+            margin: auto;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            direction: ltr;
+            color: white;
+            text-align: center;
+        }
+
+        img{
+            width: 90px;
+            height: 120px;
+            margin: 10px 25px;
+        }
+
     }
 
+    @media screen and (max-width: 1016px) {
+        
+        flex-direction: column;
+        width: 500px;
+        height: 302px;
+    
     img{
-        width: 90px;
-        height: 120px;
-        margin: 10px 25px;
+        margin-bottom: -32px;
+        margin-left: 0;
+        width: 100px;
+        height: 150px;
     }
+    span{
+       width: 220px;
+       margin-bottom: -8px;
+       margin-top: 30px;
+       margin-left: 20px;
+    }
+    
+    
+}
+
+@media screen and (max-width: 766px){
+        flex-direction: row;
+        justify-content: center;
+    
+        width: 650px;
+        height: 250px;
+    img{
+        width: 140px;
+        height: 200px;
+        margin-left: 15px;
+        margin-bottom: 8px;
+    }
+    span{
+        flex-wrap: wrap;
+        text-align: center;
+
+    }
+}
+
+@media screen and (max-width: 668px){
+    width: 500px;
+}
+@media screen and (max-width: 517px){
+    width: 450px;
+    img{
+        width: 100px;
+        height: 160px;
+        margin-left: 25px;
+    }
+}
+@media screen and (max-width: 465px){
+    width: 350px;
+    img{
+        width: 100px;
+        height: 160px;
+        margin-left: 60px;
+    }
+    span{
+       margin-left: 0px;
+    }
+}
+    
 `;
 
 export const PriceArea = styled.aside`
     display: flex;
 
     width: 100%;
-   height: 90px;
+    height: 90px;
 
     background-color: #adb5bd;
     display: flex;
@@ -115,12 +185,13 @@ export const PriceArea = styled.aside`
         justify-content: center;
 
         input{
-        width: 250px;
-        height: 50px;
-        font-size: 25px;
-        border-radius: 5px;
+            width: 250px;
+            height: 50px;
+            font-size: 25px;
+            border-radius: 5px;
 
-        border: none;
+            border: none;
+        }
 
     }
 
@@ -145,6 +216,32 @@ export const PriceArea = styled.aside`
         }
         
     }
+
+    @media screen and (max-width: 859px){
+        p{
+            font-size: 20px;
+        }
+
+        div{
+            align-items: center;
+            input{
+                width: 150px;
+                height: 30px;
+                font-size: 15px;
+            }
+            button{
+                width: 50px;
+                height: 32px;
+
+                font-size: 15px;
+            }
+        }
+        
+        @media screen and (max-width: 502px){
+            flex-direction: column;
+            height: 150px;
+        }
+        
     }
     
     

@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 
-import { TitleContent, Card, Products,ButtonModal } from './styles';
+import { TitleContent, Card,ButtonModal } from './styles';
 import Pagination from '../pagination';
 import Modal from '../modal';
 
@@ -19,9 +19,8 @@ export default function Cards() {
     const [comics, setComics] = useState([])
     const [comicDetails, setComicDetails] = useState({})
     const [currentPage, setCurrentPage] = useState(0);
-    const [postsPerPage] = useState(9);
+    const [postsPerPage] = useState(12);
     const [showModal, setShowModal] = useState(false);
-
     const pages = Math.ceil(comics.length / postsPerPage);
     const startIndex = currentPage * postsPerPage;
     const endIndex = startIndex + postsPerPage;
@@ -44,6 +43,7 @@ export default function Cards() {
     useEffect(() => {
         axios(`http://gateway.marvel.com/v1/public/comics?ts=${time}&apikey=${publicKey}&hash=${hash}`).then((response) => {
             setComics(response.data.data.results)
+
         }).catch(err => {
             console.log(err)
         })
@@ -53,20 +53,17 @@ export default function Cards() {
         setComicDetails(comic)
         openModal();
     }
-
-
     return (
         <div>
             
             
             
-            <TitleContent>OUR COMICS</TitleContent>
+            <TitleContent>QUADRINHOS</TitleContent>
             <Card>
                 {currentPosts.map((comic, index) => (
                     <div key={index} >
-                        <ButtonModal data-aos="zoom-in" onClick={() => setInfoModal(comic)}>
-                            <span>Rare</span>
-                                
+                        <ButtonModal data-cy={"modal-button"+index} data-aos="zoom-in" onClick={() => setInfoModal(comic)}>
+                            <span>Raro</span>
                                     <img
                                         key={comic.id}
                                         src={comic.thumbnail.path + "/portrait_xlarge.jpg"}
@@ -74,7 +71,7 @@ export default function Cards() {
                                     />
                                 <div>
                                     <p>{comic.title}</p>
-                                    <p>$: {comic.prices[0].price}</p>
+                                    <p>R$: {comic.prices[0].price}</p>
                                 </div>
                         </ButtonModal>
                     </div>

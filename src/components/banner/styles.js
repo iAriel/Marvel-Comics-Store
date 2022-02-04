@@ -39,6 +39,10 @@ img{
         display: none;
     }
 }
+@media screen and (max-width: 424px){
+    height: 380px;
+    margin-bottom: 40px;
+}
 `;
 
 export const TextTitle = styled.div`
@@ -69,4 +73,10 @@ span{
         font-size: 23px;
     }
 }
+@media screen and (max-width: 424px){
+    font-size: 18px;
+    span{
+        font-size: 16px;
+    }
+  }
 `;

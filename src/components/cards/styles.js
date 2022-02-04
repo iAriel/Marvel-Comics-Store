@@ -7,6 +7,11 @@ export const TitleContent = styled.h1`
     margin-bottom: 80px;
 
     color: #cc0000;
+
+    @media screen and (max-width: 465px){
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
     
 `;
 
@@ -14,11 +19,16 @@ export const Card = styled.div`
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: auto;
-    width: 80%;
+    width: 100%;
     justify-content: center;
+    align-items: center;
     gap: 48px 12.8px;
     z-index: -10;
+
+    @media screen and (max-width: 668px){
+        flex-direction: column;
+        gap: 10px 0px;
+    }
 `;
 
 export const ButtonModal = styled.button`
@@ -75,23 +85,6 @@ export const ButtonModal = styled.button`
         text-align: center;
         padding: 16px;
     }
-
-    div{
-        button{
-        background: white;
-        padding: 7px 40px 7px 40px;
-        border:none;
-        margin-bottom: 16px;
-        margin-left: 50px;
-        transform: skewX(-30deg);
-        transition: all .35s
-    }
-        button:hover{
-            cursor: pointer;
-            color: #001514;
-            background: #ffebeb;
-        }
-    }
     
     @media screen and (max-width: 1016px) {
         
@@ -111,11 +104,7 @@ export const ButtonModal = styled.button`
            margin-top: 30px;
            margin-left: 20px;
         }
-        div{
-            button{
-                margin-left: 85px;
-            }
-        }
+        
         
     }
 
@@ -134,7 +123,6 @@ export const ButtonModal = styled.button`
         p{
             flex-wrap: wrap;
             text-align: center;
-
         }
     }
 
@@ -147,6 +135,27 @@ export const ButtonModal = styled.button`
             width: 100px;
             height: 160px;
             margin-left: 25px;
+        }
+    }
+    @media screen and (max-width: 465px){
+        width:340px;
+        img{
+            width: 100px;
+            height: 160px;
+            margin-left: 10px;
+        }
+        p{
+            font-size:13px;
+            margin-left: 0px;
+            padding: 0;
+            margin-left: 10px;
+        }
+    }
+
+    @media screen and (max-width: 380px){
+        width: 360px;
+        img{
+            margin-left: 5px;
         }
     }
 `;

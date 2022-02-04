@@ -13,7 +13,7 @@ export default function CartButton (){
     return(
         <div>
             <NavBar>
-                <button onClick={() => handleState()}>
+                <button data-cy="go-cart" onClick={() => handleState()}>
                     <img src={Bag} alt='bag' />
                 </button>
                 {cart.length !== 0 ? (

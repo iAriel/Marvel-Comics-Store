@@ -10,18 +10,20 @@ export default function Modal({showModal, setShowModal, comicDetails}){
         setCart([...cart, comicDetails]);
     }
     return(
-        <div>
+        <div data-cy="modal">
             {showModal ? (
                 <Background>
                     <ModalWrapper showModal={showModal}>
                         <ModalImg src={comicDetails.thumbnail.path+"/portrait_xlarge.jpg"} alt={comicDetails.title}/>
                         <ModalContent>
                             <h1>{comicDetails.title}</h1>
-                            <p>{comicDetails.description || "No Description"}</p>
-                            <p>{cart.length}</p>
-                            <BuyButton onClick={() => addToCart(comicDetails)}>Buy</BuyButton>
+                            <div>
+                            <   p>{comicDetails.description || "Sem descrição"}</p>
+                            </div>
+                            
+                            <BuyButton data-cy="buy-item" onClick={() => addToCart(comicDetails)}>Comprar</BuyButton>
                         </ModalContent>
-                        <CloseButton onClick={() => setShowModal(prev => !prev)}>X</CloseButton>
+                        <CloseButton data-cy="close-modal" onClick={() => setShowModal(prev => !prev)}>X</CloseButton>
                     </ModalWrapper>
                     <h1>Modal</h1>
                 </Background>

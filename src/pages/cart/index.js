@@ -34,23 +34,22 @@ export default function Cart() {
                 <span>MARVEL COMICS</span>
             </NavBar>
             <CardContainer>
-                {cart.map((products) => (
-                    <CardCart>
+                {cart.map((products, index) => (
+                    <CardCart key={index} data-cy={"cart-card"+index}>
                         <div>
                             <img key={products.id}
                                 src={products.thumbnail.path + "/portrait_xlarge.jpg"}
                                 alt={products.title} />
                             <span>{products.title}</span>
                         </div>
-                        <p>{products.prices[0].prices}</p>
                     </CardCart>
                 ))}
             </CardContainer>
             <PriceArea>
                 <p>Total: ${price}</p>
                     <div>
-                        <input type="text" placeholder="discount coupon" onChange={event => setCoupon(event.target.value)}/>
-                        <button type="submit" onClick={() => ValidateCuopon()}>Done</button>
+                        <input data-cy="cuopon" type="text" placeholder="cupom de desconto" onChange={event => setCoupon(event.target.value)}/>
+                        <button data-cy="submit-cuopon" type="submit" onClick={() => ValidateCuopon()}>Ok</button>
                     </div>
                 </PriceArea>
         </Container>

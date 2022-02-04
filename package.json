@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.1.10",
     "aos": "^2.3.4",
     "axios": "^0.24.0",
+    "cypress": "^9.4.1",
     "framer-motion": "^4",
     "md5": "^2.3.0",
     "react": "^17.0.2",
@@ -21,6 +22,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "cypress": "cypress run",
+    "cypress:chrome": "cypress run -b chrome",
+    "cypress:open": "cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-cypress": "^2.12.1"
   }
 }
