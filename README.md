@@ -53,3 +53,7 @@
 <div align="center">
     <img src="https://ik.imagekit.io/arielSobreira/ezgif.com-gif-maker_a9OVfuadz.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1643935411879"/>
 </div>
+
+## Cupom de desconto
+- rareComic
+- comicAmazing
